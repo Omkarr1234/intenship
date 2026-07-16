@@ -1,168 +1,153 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Portfolio with Registration Form</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 20px;
-    }
-    header {
-      background: #333;
-      color: #fff;
-      padding: 15px;
-    }
-    nav ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      display: flex;
-      gap: 15px;
-    }
-    nav a {
-      color: #fff;
-      text-decoration: none;
-    }
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-top: 20px;
-    }
-    table, th, td {
-      border: 1px solid #444;
-    }
-    th, td {
-      padding: 10px;
-      text-align: left;
-    }
-    form {
-      margin-top: 30px;
-      padding: 20px;
-      border: 1px solid #ccc;
-      background: #f9f9f9;
-    }
-    form label {
-      display: inline-block;
-      width: 150px;
-      margin-bottom: 5px;
-    }
-    form input, form select, form textarea, form button {
-      margin-bottom: 15px;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>my protfolio omkar</title>
 </head>
 <body>
-
-  <!-- Semantic Header & Navigation -->
-  <header>
-    <h1>My Portfolio</h1>
     <nav>
-      <ul>
-        <li><a href="#about">About</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
     </nav>
-  </header>
+    <header>
+        <h1>Hi, I'm omkar👋</h1>
+        <p>I'm a web developer passionate about creating interactive and user-friendly websites.</p>
+        <a href="#hire">hire me</a>
+    </header>
+    <section id="about">
+        <h2>About Me</h2>
+        <img src="" alt="Profile Picture">
+        <p>I am a web developer with experience in HTML,CSS, and JavaScript. I enjoy building responsive and accessible web applications.</p>
+    <hr><h2>My Skills</h2>
+    <ul type="square">
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JavaScript</li>
+        <li>React</li>
+        <li>Node.js</li>
+    </ul>
+    <hr><h2>My Projects</h2>
+    <p>Here are some of the projects I've worked on:</p>
+    h3>Project 1: </h3>
+    <p>Description of Project 1.</p>
+    <h3>Project 2: </h3>
+    <p>Description of Project 2.</p>
+    <h3>Project 3: </h3>
+    <p>Description of Project 3.</p>
+    <a href="#view projects">View projects</a>
+</header>
+    <section id="contact">
+        <h2>Contact Me</h2>
+        <!-- <p>If you'd like to get in  touch, please reach out via email or connect with me on LinkedIn.</p>
+        <ul>
+            <li>omkarr602@gmail.com: <a href="mailto:omkarr602@gmail.com">Email</a></li>
+            <li>LinkedIn: <a href="https://www.linkedin.com/in/omkar-rathod-37a1b63b8/" target="_blank">Connect</a></li>
+            <li>GitHub: <a href="https://github.com/Omkarr1234" target="_blank">View Profile</a></li> -->
+           <h2>Contact me</h2> 
+           <p>If you'd like to get in touch, please reach out via email or connect with me on LinkedIn.</p>
+           <form action="">
+               <label for="name">Name:</label>
+               <input type="text" id="name" name="name" required placeholder="Enter your name"> <br>
+               <label for="email">Email:</label>
+               <input type="email" id="email" name="email" required> <br>
+               <label for="subject">Subject:</label>
+               <select name="subject" id="subject">
+                   <option value="hire"> I want to Hire you</option>
+                   <option value="collaboration">Project Collaboration</option>
+                   <option value="others">Other</option>
+                   
+               </select>
+    label for="message">Message:</label> <br>
+        
+    <textarea id="message" name="message" placeholder="please drop a message"></textarea>
+</form>
+</ul>
+</section>
+<table>
+    <tr>
+        <th>Technology</th>
+        <th>Proficiency</th>
+        <th>Years of Experience</th>
+    </tr>
+    <tr>
+        <td>HTML</td>
+        <td>Intermediate</td>
+        <td>2</td>
+    </tr>
+    <tr>
+        <td>CSS</td>
+        <td>Intermediate</td>
+        <td>2</td>
+    </tr>
+    <tr>
+        <td>JavaScript</td>
+        <td>Intermediate</td>
+        <td>2</td>
+    </tr>
+    <tr>
+        <td>React</td>
+        <td>Beginner</td>
+        <td>1</td>
+    </tr>
+    <tr>
+        <td>git</td>
+        <td>Beginner</td>
+        <td>1</td>
+</table>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Registration Form</h1>
+    <form>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required><br><br>
 
-  <!-- Skills Table -->
-  <section id="skills">
-    <h2>Skills</h2>
-    <table>
-      <thead>
-        <tr>
-          <th>Technology</th>
-          <th>Proficiency</th>
-          <th>Years of Experience</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Python</td>
-          <td>Advanced</td>
-          <td>3</td>
-        </tr>
-        <tr>
-          <td>HTML & CSS</td>
-          <td>Intermediate</td>
-          <td>2</td>
-        </tr>
-        <tr>
-          <td>JavaScript</td>
-          <td>Intermediate</td>
-          <td>2</td>
-        </tr>
-        <tr>
-          <td>SQL</td>
-          <td>Intermediate</td>
-          <td>1.5</td>
-        </tr>
-        <tr>
-          <td>Java</td>
-          <td>Beginner</td>
-          <td>1</td>
-        </tr>
-      </tbody>
-    </table>
-  </section>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required><br><br>
 
-  <!-- Registration Form -->
-  <section id="registration">
-    <h2>Registration Form</h2>
-    <form action="#" method="post" enctype="multipart/form-data">
-      
-      <!-- Text Input -->
-      <label for="fullname">Full Name:</label>
-      <input type="text" id="fullname" name="fullname" required><br>
-      
-      <!-- Email Input -->
-      <label for="email">Email:</label>
-      <input type="email" id="email" name="email" required><br>
-      
-      <!-- Password Input -->
-      <label for="password">Password:</label>
-      <input type="password" id="password" name="password" required><br>
-      
-      <!-- Radio Buttons -->
-      <label>Gender:</label>
-      <input type="radio" id="male" name="gender" value="male">
-      <label for="male">Male</label>
-      <input type="radio" id="female" name="gender" value="female">
-      <label for="female">Female</label><br>
-      
-      <!-- Checkbox -->
-      <label>Interests:</label>
-      <input type="checkbox" id="coding" name="interests" value="coding">
-      <label for="coding">Coding</label>
-      <input type="checkbox" id="design" name="interests" value="design">
-      <label for="design">Design</label><br>
-      
-      <!-- Select Dropdown -->
-      <label for="course">Course:</label>
-      <select id="course" name="course">
-        <option value="cs">Computer Science</option>
-        <option value="it">Information Technology</option>
-        <option value="ece">Electronics</option>
-      </select><br>
-      
-      <!-- Textarea -->
-      <label for="bio">Short Bio:</label><br>
-      <textarea id="bio" name="bio" rows="4" cols="40"></textarea><br>
-      
-      <!-- File Upload -->
-      <label for="resume">Upload Resume:</label>
-      <input type="file" id="resume" name="resume"><br>
-      
-      <!-- Date Input -->
-      <label for="dob">Date of Birth:</label>
-      <input type="date" id="dob" name="dob"><br>
-      
-      <!-- Submit -->
-      <button type="submit">Register</button>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required><br><br>
+        
+        <label for="gender">Gender:</label>
+        <label for="male">male</label>
+        <input type="radio" id="male" name="gender" value="male">
+        <label for="female">female</label>
+        <input type="radio" id="female" name="gender" value="female">
+        
+       <br> <label for="checkbox">checkbox:</label>
+    <input type="checkbox" name="subscribe" value="Yes"> Yes<br><br>
+
+     <select name="Country" id="Country" required>
+        <option value="">Select your home Counrty</option>
+        <option value="India">INDIA</option>
+        <option value="Usa">USA</option>
+        <option value="Canada">CANADA</option>
+     </select><br>
+
+        <br><label for="Message">Message:</label><br>
+        <textarea name="Message" id="Message" placeholder="Enter your message"></textarea>
+
+        <br><br><label for="file">Upload your file:</label>
+        <input type="file" name="file" id="file"><br><br>
+
+        <label for="Date">Date:</label>
+        <input type="date" name="Date" id="Date"><br><br>
+
+    <button type="submit">Submit</button>
+
+        
+
+
     </form>
-  </section>
-
 </body>
 </html>
