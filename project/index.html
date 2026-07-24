@@ -1,96 +1,127 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My portfolio omkar</title>
-  </head>
-  <body>
-    <header>
-      <nav>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio - Omkar</title>
+
+    <!-- CSS File -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+   
+<header>
+    <nav>
         <div class="logo">OM</div>
+
         <ul>
             <li><a href="#about">About</a></li>
             <li><a href="#skills">Skills</a></li>
-            <li> <a href="#projects">Project</a></li>
+            <li><a href="#projects">Projects</a></li>
             <li><a href="#contact">Contact</a></li>
-        </ul> 
-        <button class="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">🌙</button> 
-        <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">≡</button>
-      </nav>
-    </header>
-     <main>
-        <section id="hero" class="hero-section">
-            <h1>Hi,I'm omkar 👋</h1>
-            <p>I'm a passionate web developer from Bengaluru.</p>
-            <div class="hero-button">
-                <a href="#projects">View My Work</a>
-                <a href="#contact">
+        </ul>
 
-                </a>Contact Me</a>
-            </div>
-        </section>
-        <section id="about" class="about-section">
-            <h2>About Me</h2>
-            <figure class="profile-figure">
-                <img src="omkar.jpeg" alt="omkar profile photo" width="300">
-                <figcaption>Omkar web Developer</figcaption>
-            </figure>
-            <p>I'm a passionate web developer..</p>
-        </section>
-      <section id="skills" class="skill-section">
-      <h2>My Skills</h2>
-      <div class="skill-grid">
-        <div class="skill-item" data-level="90">HTML</div>
-        <div class="skill-item" data-level="80">CSS</div>
-        <div class="skill-item" data-level="75">Javascript</div>
-        <div class="skill-item" data-level="60">React</div>  
-      </div>
+        <button class="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">🌙</button>
+        <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+    </nav>
+</header>
+
+<main>
+
+    <section id="hero" class="hero-section">
+        <h1>Hi, I'm Omkar 👋</h1>
+        <p>I'm a passionate Web Developer from Bengaluru.</p>
+
+        <div class="hero-button">
+            <a href="#projects">View My Work</a>
+            <a href="#contact">Contact Me</a>
+        </div>
     </section>
+
+    <section id="about" class="about-section">
+        <h2>About Me</h2>
+
+        <figure class="profile-figure">
+            <img src="OM_PHOTO.jpg" alt="Omkar Profile Photo" width="300">
+            <figcaption>Omkar - Web Developer</figcaption>
+        </figure>
+
+        <p>I'm a passionate web developer who enjoys creating responsive and user-friendly websites using HTML, CSS, JavaScript, and React.</p>
+    </section>
+
+    <section id="skills" class="skill-section">
+        <h2>My Skills</h2>
+
+        <div class="skill-grid">
+            <div class="skill-item" data-level="90">HTML</div>
+            <div class="skill-item" data-level="80">CSS</div>
+            <div class="skill-item" data-level="75">JavaScript</div>
+            <div class="skill-item" data-level="60">React</div>
+        </div>
+    </section>
+
     <section id="projects" class="projects-section">
         <h2>My Projects</h2>
+
         <div class="projects-grid">
+
             <article class="project-card" data-category="web">
-                <img src="project1.jpg" alt="weather App screenshot">
+                <img src="data:image/webp;base64,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" alt="Weather App Screenshot">
+
                 <h3>Weather App</h3>
-                <p>Real-time weather dashboard using OpenWeather API</p>
-                <div class="project_tags">
-                   <span>React</span>
-                   <span>API</span>
+
+                <p>Real-time weather dashboard using the OpenWeather API.</p>
+
+                <div class="project-tags">
+                    <span>React</span>
+                    <span>API</span>
                 </div>
+
                 <a href="#">Live Demo</a>
                 <a href="#">GitHub</a>
             </article>
+
         </div>
-   </section>
-   <section id="contact" class="contact-section">
-    <h2>Get In Touch</h2>
-    <form action="#" method="post" novalidate>
-      <div class="form-group">
-        <label for="name">Name</label>
-        <input type="text" id="name" name="name" required>
-      </div>
-      <div class="form-group">
-        <label for="email">Email</label>
-        <input type="email" name="email" id="email" required>
-      </div>
-      <div class="form-group">
-        <label for="message">message</label>
-        <textarea name="message" id="message" rows="5" required></textarea>
-      </div>
-      <button type="submit" class="btn btn-primary">Send Message</button>
-    </form>
-   </section>
-     </main>
-     <footer class="site-footer">
-      <p>
-        &copy;omkar.built with HTML & CSS ❤️
-      </p>
-      <nav aria-label="socialmedia lins">
-      <a href="https://github.com/Omkarr1234" target="_blank">GitHub</a>
-      <a href="https://www.linkedin.com/in/omkar-rathod-37a1b63b8/" target="_blank">LinkedIn</a>
-     </nav>
-     </footer>
-    
- </body>
+    </section>
+
+    <section id="contact" class="contact-section">
+        <h2>Get In Touch</h2>
+
+        <form action="#" method="post" novalidate>
+
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+
+            <div class="form-group">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Send Message</button>
+
+        </form>
+    </section>
+
+</main>
+
+<footer class="site-footer">
+
+    <p>&copy; 2026 Omkar. Built with HTML &amp; CSS ❤️</p>
+
+    <nav aria-label="Social Media Links">
+        <a href="https://github.com/Omkarr1234" target="_blank">GitHub</a>
+        <a href="https://www.linkedin.com/in/omkar-rathod-37a1b63b8/" target="_blank">LinkedIn</a>
+    </nav>
+
+</footer>
+<script src="script.js"></script>
+</body>
 </html>
