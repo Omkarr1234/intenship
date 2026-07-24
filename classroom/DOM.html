@@ -1,11 +1,499 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>My Portfolio - Omkar</title>
+
+    <style>
+        
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* Variables */
+:root {
+    --primary: #1B4F72;
+    --accent: #F18F01;
+    --text: #2C3E50;
+    --light: #F4F6F8;
+    --white: #FFFFFF;
+    --font-main: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Body */
+body {
+    font-family: var(--font-main);
+    color: var(--text);
+    line-height: 1.8;
+    background: var(--white);
+    padding-top: 80px;
+    width: 100%;
+    overflow-x: hidden; /* Requirement: Ensures zero horizontal scroll from 320px to 1440px+ */
+}
+
+/* Ensure images don't break grid containers */
+img, video {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+
+nav {
+    display: flex;                      
+    justify-content: space-between;     
+    align-items: center;
+    padding: 20px 5%;
+    background: var(--primary);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 35px;
+}
+
+nav ul a {
+    text-decoration: none;
+    color: var(--white);
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+nav ul a:hover {
+    color: var(--accent);
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: bold;
+    color: var(--white);
+}
+
+.theme-toggle,
+.menu-toggle {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 22px;
+    cursor: pointer;
+}
+
+.menu-toggle {
+    display: none;
+}
+
+
+section {
+    padding: 80px 5%;
+}
+
+section h2 {
+    text-align: center;
+    font-size: 2.2rem;
+    margin-bottom: 40px;
+}
+
+section h2::after {
+    content: "";
+    display: block;
+    width: 80px;
+    height: 4px;
+    background: var(--accent);
+    margin: 12px auto 0;
+    border-radius: 2px;
+}
+
+/* Hero Section */
+.hero-section {
+    background: linear-gradient(to right, #1B4F72, #3498DB);
+    color: white;
+    text-align: center;
+    padding: 100px 20px;
+}
+
+.hero-section h1 {
+    font-size: 48px;
+    margin-bottom: 15px;
+    animation: fadeInUp .8s ease both;
+}
+
+.hero-section p {
+    font-size: 20px;
+    margin-bottom: 30px;
+    animation: fadeInUp .8s ease .2s both;
+}
+
+.hero-button {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    animation: fadeInUp .8s ease .4s both;
+}
+
+/* Buttons */
+.btn, .hero-button a {
+    display: inline-block;
+    padding: 12px 28px;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: .3s;
+    background: var(--accent);
+    color: white;
+}
+
+.btn-primary:hover, .hero-button a:hover {
+    background: transparent;
+    color: var(--accent);
+    border: 2px solid var(--accent);
+}
+
+/* About Section */
+.profile-figure {
+    text-align: center;
+    margin: 30px 0;
+}
+
+.profile-figure img {
+    width: 250px;
+    max-width: 100%;
+    border-radius: 50%;
+    border: 5px solid var(--primary);
+    margin: 0 auto;
+}
+
+.profile-figure figcaption {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.skills-grid {
+    display: grid;                                              
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); 
+    gap: 20px;
+}
+
+.skill-item {
+    background: var(--light);
+    border: 2px solid var(--primary);
+    border-radius: 12px;
+    padding: 30px 20px;
+    text-align: center;
+    font-weight: bold;
+    transition: .4s;
+}
+
+.skill-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 20px rgba(0,0,0,.2);
+}
+
+
+/* Requirement Breakpoint 1: Mobile (Default Layout under 768px wide) -> 1 Column */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 30px;
+}
+
+.project-card {
+    background: var(--primary);
+    color: white;
+    border-radius: 16px;
+    overflow: hidden;
+    text-align: center;
+    transition: .4s;
+}
+
+.project-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 20px rgba(0,0,0,.3);
+}
+
+.project-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    transition: .4s;
+}
+
+.project-card img:hover {
+    transform: scale(1.05);
+}
+
+.project-card h3,
+.project-card p,
+.project-tags,
+.project-card a {
+    padding: 10px;
+}
+
+.project-card a {
+    display: inline-block;
+    color: var(--accent);
+    text-decoration: none;
+    margin-bottom: 15px;
+}
+
+.project-card a:hover {
+    text-decoration: underline;
+}
+
+.project-tags span {
+    display: inline-block;
+    background: var(--accent);
+    color: white;
+    padding: 5px 12px;
+    border-radius: 20px;
+    margin: 5px;
+    font-size: 14px;
+}
+
+/* Requirement Breakpoint 2: Tablet View (768px and up) -> 2 Columns */
+@media (min-width: 768px) {
+    .projects-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Requirement Breakpoint 3: Desktop View (1024px and up) -> 3 Columns */
+@media (min-width: 1024px) {
+    .projects-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Contact Section */
+.contact-section {
+    max-width: 600px;
+    margin: auto;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: var(--primary);
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 14px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    font-family: inherit;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(27,79,114,.15);
+}
+
+.site-footer {
+    background: var(--primary);
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+.site-footer nav {
+    position: static;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 10px;
+    padding: 0;
+    background: transparent;
+}
+
+.site-footer nav a {
+    color: white;
+    text-decoration: none;
+}
+
+.site-footer nav a:hover {
+    color: var(--accent);
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Global Mobile Responsiveness Updates */
+@media (max-width: 768px) {
+    nav {
+        flex-wrap: wrap;
+    }
+
+    nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+        width: 100%;
+        margin-top: 15px;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .hero-section h1 {
+        font-size: 36px;
+    }
+
+    .hero-button {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+    </style>
 </head>
+
 <body>
-    
+   
+<header>
+    <nav>
+        <div class="logo">OM</div>
+
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+
+        <button class="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">🌙</button>
+        <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+    </nav>
+</header>
+
+<main>
+
+    <section id="hero" class="hero-section">
+        <h1>Hi, I'm Omkar 👋</h1>
+        <p>I'm a passionate Web Developer from Bengaluru.</p>
+
+        <div class="hero-button">
+            <a href="#projects">View My Work</a>
+            <a href="#contact">Contact Me</a>
+        </div>
+    </section>
+
+    <section id="about" class="about-section">
+        <h2>About Me</h2>
+
+        <figure class="profile-figure">
+            <img src="photo.png" alt="Omkar Profile Photo" width="300">
+            <figcaption>Omkar - Web Developer</figcaption>
+        </figure>
+
+        <p>I'm a passionate web developer who enjoys creating responsive and user-friendly websites using HTML, CSS, JavaScript, and React.</p>
+    </section>
+
+    <section id="skills" class="skill-section">
+        <h2>My Skills</h2>
+
+        <div class="skill-grid">
+            <div class="skill-item" data-level="90">HTML</div>
+            <div class="skill-item" data-level="80">CSS</div>
+            <div class="skill-item" data-level="75">JavaScript</div>
+            <div class="skill-item" data-level="60">React</div>
+        </div>
+    </section>
+
+    <section id="projects" class="projects-section">
+        <h2>My Projects</h2>
+
+        <div class="projects-grid">
+
+            <article class="project-card">
+                <img src="weather.png" alt="Weather App Screenshot">
+
+                <h3>Weather App</h3>
+
+                <p>Real-time weather dashboard using the OpenWeather API.</p>
+
+                <div class="project-tags">
+                    <span>React</span>
+                    <span>API</span>
+                </div>
+
+                <a href="#">Live Demo</a>
+                <a href="#">GitHub</a>
+            </article>
+
+        </div>
+    </section>
+
+    <section id="contact" class="contact-section">
+        <h2>Get In Touch</h2>
+
+        <form action="#" method="post" novalidate>
+
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+
+            <div class="form-group">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Send Message</button>
+
+        </form>
+    </section>
+
+</main>
+
+<footer class="site-footer">
+
+    <p>&copy; 2026 Omkar. Built with HTML &amp; CSS ❤️</p>
+
+    <nav aria-label="Social Media Links">
+        <a href="https://github.com/Omkarr1234" target="_blank">GitHub</a>
+        <a href="https://www.linkedin.com/in/omkar-rathod-37a1b63b8/" target="_blank">LinkedIn</a>
+    </nav>
+
+</footer>
+
 </body>
 </html>
+
